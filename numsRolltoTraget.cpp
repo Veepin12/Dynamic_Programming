@@ -13,24 +13,21 @@ using namespace std;
 class solution{
 public:
     
-    vector<vector<int>> dp;
+    //vector<vector<int>> dp(10003,vector<int> 10003);
     int dice_target(int n,int k,int target){
         if(target==0 and n==0) return 1;
-        if(dp[n][target]!= -1) return dp[n][target];
         if(n==0) return 0;
         int sum=0;
         for(int i=1;i<=k;i++){
-               if(target - i<0) continue;
+            
                 sum+=dice_target(n-1,k,target-i);
             
         }
-        return dp[n][target]=sum;
+        return sum;
         
         
     }
     int numsRolltoTarget(int n,int k,int target){
-        dp.clear();
-        dp.resize(35,vector<int> (10005,-1));
         return dice_target(n,k,target);
     }
 };
