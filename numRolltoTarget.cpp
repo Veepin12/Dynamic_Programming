@@ -8,10 +8,12 @@
 
 #include <iostream>
 #include <vector>
+#define inf
 using namespace std;
 class solution{
 public:
     
+    vector<vector<int>> dp(10003,vector<int> 10003);
     int dice_target(int n,int k,int target){
         if(target==0 and n==0) return 1;
         if(n==0) return 0;
