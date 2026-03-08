@@ -6,37 +6,30 @@
 //
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
-class solution{
-public:
-    vector<bool> dp;
-    int Mcoin(int n,int k,int l){
-        dp[1]=1;
-        
-        dp[k]=1;
-        dp[l]=1;
-        if(dp[n]!=0) return dp[n];
-        
-        for(int i=2;i<=n;i++){
-            if(i==k or i==l) continue;
-            
-            dp[i]=!(dp[i-1] and ((i-k)>=1?dp[i-k]:1) and ((i-l)>=1?dp[i-l]:1));
-        }
-        
-        
-        return dp[n];
-        
-    }
-    int optimal(int n,int k,int l){
-        dp.clear();
-        dp.resize(1000005,-1);
-        return Mcoin(n,k,l);
-    }
-    
-};
 int main(){
-    class solution S;
-    cout<<S.optimal(2,3,4);
+    int k,l,m;
+    cin>>k>>l>>m;
+
+    vector<bool> dp(100005,0);
+    dp[1]=1;
+    dp[k]=1;
+    dp[l]=1;
+    for(int i=2;i<=1000000;i++){
+        if(i==k or i==l ) continue;
+        dp[i]=dp[i-1] and ((i-k>=1)?dp[i-k]:1) and ((i-l>=1)?dp[i-l]:1);
+    }
+    for(int i=0;i<m;i++){
+        int n;
+        cin>>n;
+        if(dp[n]==1){
+            cout<<"A"<<endl;
+        }
+        else{
+            cout<<"B"<<endl;
+        }
+    }
     return 0;
 }
