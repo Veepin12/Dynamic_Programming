@@ -24,15 +24,11 @@ public:
             
         }
         return sum;
-        
-        
     }
     int numsRolltoTarget(int n,int k,int target){
         return dice_target(n,k,target);
     }
 };
-
-
 int main(){
     class solution S;
     cout<<S.numsRolltoTarget(2,6,7)<<endl;
