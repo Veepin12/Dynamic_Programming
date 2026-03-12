@@ -5,6 +5,8 @@
 //  Created by Veepin Chaudhary on 10/02/26.
 //
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
 class solution{
