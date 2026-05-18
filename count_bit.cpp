@@ -38,7 +38,7 @@ vector<int> countBits(int n){
 int main(){
     cout<<count(5)<<endl;
     
-    vector<int> res = countBits(5);
+    vector<int> res = countBits(20);
     for( int i =0; i < res.size(); i++){
         cout<<res[i]<<" ";
     }
