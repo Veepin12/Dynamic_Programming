@@ -14,13 +14,6 @@ public:
         int temp1 = solve( i + 1 , n,nums);
 
         return dp[i] = max( temp , temp1);
-
-
-
-
-
-
-
     }
 
     int rob( vector<int> & nums){
