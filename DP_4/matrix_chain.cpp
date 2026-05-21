@@ -24,6 +24,7 @@ int main(){
 
     for( int i = 0; i < n; i++) cin>>nums[i];
 
+    
     cout<<S.f(nums , 0 , n - 1)<<endl;
     return 0;
 }

@@ -1,34 +1,59 @@
+//
+//  mixture.cpp
+//  DSA_with_Cpp
+//
+//  Created by Veepin_Chaudhary on 21/05/26.
+//
+
 #include <iostream>
 using namespace std;
-vector<int> dp(105 , -1);
-class Solution {
-    public:
+#define ll long long int
+vector<vector<int>> dp(102, vector<int> (105,0));
 
-    int mixtures(vector<int> & mixture ){
-        int n = mixture.size();
-        
-        if( n == 1) return 0;
-        if( n == 2) return mixture[0] * mixture[1];
 
-        // Resulting Mixture Color a and b is ( a + b) mod 100;
-        
-
-        return 3;
+    
+    ll g(vector<int> & nums , int i , int j){
+        ll result = 0;
+        for( int k = i; k <= j; k++){
+            result = (result % 100 + nums[k] % 100 ) % 100;
+        }
+        return result;
     }
-
     
-};
+    ll f(vector<int> & nums, int i , int a ){
+        if( i == a ) return 0;
+        ll result = INT_MAX;
+        
+        for( int k = i ; k <= a -1; k++){
+            result = min(result , f( nums,i ,k) + f( nums,k + 1 ,a) + g(nums,i,k) * g( nums, k + 1 ,a) );
+        }
+        return result;
+        
+        
+        
+    }
+    
+
+
 int main(){
-    Solution S;
-
+   
     int n ;
-    cin>>n;
-    vector<int> mixture(n);
-    for( int i = 0;  i < n; i++) cin>>mixture[i];
     
+    while(cin>>n){
+        vector<int> nums;
+        for( int i = 0; i < n; i++){ 
+            
+            int a ;
+            cin>>a;
+            nums.push_back(a);
+        }
+        cout<<f(nums,0, nums.size() -1)<<endl;
+        nums.clear();
+        break;
+    }
     
-    dp.resize(n,0);
-    cout<<S.mixtures(mixture  )<<endl;
-    cout<<endl;
+
+   
     return 0;
 }
+
