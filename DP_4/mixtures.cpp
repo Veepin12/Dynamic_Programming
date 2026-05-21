@@ -8,7 +8,7 @@
 #include <iostream>
 using namespace std;
 #define ll long long int
-vector<vector<int>> dp(102, vector<int> (105,0));
+vector<vector<int>> dp(102, vector<int> (105,-1));
 
 
     
@@ -22,12 +22,13 @@ vector<vector<int>> dp(102, vector<int> (105,0));
     
     ll f(vector<int> & nums, int i , int a ){
         if( i == a ) return 0;
+        if(dp[i][a] != -1) return dp[i][a];
         ll result = INT_MAX;
         
         for( int k = i ; k <= a -1; k++){
             result = min(result , f( nums,i ,k) + f( nums,k + 1 ,a) + g(nums,i,k) * g( nums, k + 1 ,a) );
         }
-        return result;
+        return dp[i][a] = result;
         
         
         
