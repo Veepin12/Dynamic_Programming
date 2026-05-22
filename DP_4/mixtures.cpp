@@ -6,8 +6,16 @@
 //
 
 #include <iostream>
+#include <vector>
+#include <climits>
+#include <cstring>
 using namespace std;
 #define ll long long int
+
+
+
+
+
 vector<vector<int>> dp(102, vector<int> (105,-1));
 
 
@@ -32,8 +40,8 @@ vector<vector<int>> dp(102, vector<int> (105,-1));
         
         
         
-    }
-    
+}
+
 
 
 int main(){
