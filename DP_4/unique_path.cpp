@@ -20,7 +20,8 @@ public:
 
         for( int i = 1; i < n; i++){
             for( int j = 1; j < m; j++){
-                dp[i][j] = dp[i - 1][j] + dp[ i][ j - 1];
+                dp[i][j] = dp[i - 1][j] + dp[ i][ j - 1]; // compute the value  of i & j with checking i - 1 row and j - 1 column.
+
             }
         }
         return dp[n - 1][ m- 1];
