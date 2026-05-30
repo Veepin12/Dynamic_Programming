@@ -122,7 +122,7 @@ public:
 
 };
 int main(){
-    vector<vector<int>> nums = {{1,2},{3,4}};
+    vector<vector<int>> nums = {{1,-2},{-3,4}};
     Solution S;
 /*
 [ 1 ,  2]
@@ -131,7 +131,7 @@ path for (0 , 0) :    2->2->1.
 path for ( n - 1, 0) : 2->1->3.
  */
 
-    cout<<"The combinational Sum : " <<S.common_path(nums)<<endl;
+    cout<<"The combinational Sum : " <<S.common_path(nums) <<endl;
 
     return 0;
 }
