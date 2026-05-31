@@ -14,7 +14,8 @@ int f(vector<int> & prices , int i ,int k , bool on){
     ans = f(prices , i + 1 , k, on) ; // avoid 
 
     if( on){
-        ans = max( ans , prices[i] + f( prices , i + 1, k - 1, false));
+        ans = max( ans , prices[i] + f( prices , i 
+            + 1, k - 1, false));
 
     }
     else{
