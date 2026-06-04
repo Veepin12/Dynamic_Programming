@@ -13,12 +13,17 @@ double f( vector<double> & p , int i , int x){
     
 }
 int main(){
-    int N = 3;
+    int N ;
+    cin>>N;
     
-    vector<double> p= { .3 , 0.6 , 0.8};
+    vector<double> p(N);
+
+    for( int i = 0; i < N; i++){
+        cin>>p[i];
+    }
 
     
     memset(dp , -1 , sizeof dp);
-    cout<<fixed<<setprecision(9)<<f( p , N - 1 , 2);
+    cout<<fixed<<setprecision(9)<<f( p , N - 1 , (N  + 1) / 2);
     return 0;
 }
