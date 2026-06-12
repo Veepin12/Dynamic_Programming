@@ -10,7 +10,7 @@ public:
         vector<ll> dp( n  + 1, INT_MAX);
         
         dp[0] = 0;
-        for( int i = 1 ; i <= n; i++){
+        for( int i = 0; i <= n; i++){
             int start = max( 0 ,i - range[i]);
             int end = min(i + range[i], n);
 
